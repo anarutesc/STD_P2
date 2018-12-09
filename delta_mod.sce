@@ -1,4 +1,4 @@
-function x_q = delta_mod(sinal,delta)
+function [x_q, s_q] = delta_mod(sinal,delta)
     e(1) = 0;
     e_q(1) = delta*sign(e(1));
     x_q(1) = 0;
@@ -7,4 +7,7 @@ function x_q = delta_mod(sinal,delta)
         e_q(k+1) = delta*sign(e(k));
         x_q(k+1) = x_q(k) + e_q(k); 
     end
+    
+    s_q = e_q./delta;
+    
 endfunction

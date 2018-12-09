@@ -25,10 +25,10 @@ x_luiza_reamostrado=reamostragem(x_luiza,3)
 
 delta = 0.03;
 
-x_q_ana= delta_mod(x_ana_reamostrado, delta)
-x_q_italo= delta_mod(x_italo_reamostrado, delta)
-x_q_lara= delta_mod(x_lara_reamostrado, delta)
-x_q_luiza= delta_mod(x_luiza_reamostrado, delta)
+[x_q_ana, s_q_ana] = delta_mod(x_ana_reamostrado, delta)
+[x_q_italo, s_q_italo] = delta_mod(x_italo_reamostrado, delta)
+[x_q_lara, s_q_lara] = delta_mod(x_lara_reamostrado, delta)
+[x_q_luiza, s_q_luiza] = delta_mod(x_luiza_reamostrado, delta)
 
 t=linspace(0,98282/264600,length(x_q_ana))
 
