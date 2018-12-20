@@ -1,5 +1,3 @@
-clear;
-clc;
 load('C:\Users\ana_r\Documents\UFRN\2018.2\STD\P2\Sinais_P2\AnaRute.sod')
 x_ana=x_a;
 load('C:\Users\ana_r\Documents\UFRN\2018.2\STD\P2\Sinais_P2\Italo.sod')

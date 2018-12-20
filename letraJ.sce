@@ -1,15 +1,31 @@
 function [x, y]= PAM_bin(palavra)
     m = length(palavra)
-   
-   //como os bits do delta só assumem 2 valores (1 e -1):
+
+    //como os bits do delta só assumem 2 valores (0 e 1):
     ruido = 0.1*rand(1,m,'normal');
+    j = 1;
+    
     for i=1:m
-        y(i) = palavra(i) + ruido(i);
+        if palavra(i) == -1
+            palavra(i) = 0
+        end 
     end
-       
-    x = 1:m
+    
+    for i=1:2*m
+        if modulo(i,4) == 0
+            y(i) = 1;
+        else 
+            if modulo(i,4) == 1
+                y(i) = 0;
+            else
+                y(i) = palavra(j) + ruido(j);
+                j = j + 1;
+            end
+        end
+    end
+    
+    x = linspace(0, 98281/264600,length(y));
     //"transformando" para o tempo
-    x = x./(264600)
 
 endfunction
 

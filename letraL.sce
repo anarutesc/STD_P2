@@ -1,4 +1,3 @@
-clear
 H = [zeros(1,10000) ones(1,40000) zeros(1,10000)]
 ht = ifft(H)
 h = 1e-4

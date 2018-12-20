@@ -10,7 +10,7 @@ function [x, y]= PAM_mario(palavra,m)
         b(i) = bin2dec(string(soma));
     end
 
-    ruido = 0.1*rand(1,length(b),'normal');
+    ruido = 0.02*rand(1,length(b),'normal');
     for i=1:length(b)
         b(i) = b(i) + ruido(i);
     end
@@ -28,11 +28,11 @@ endfunction
 
 tam = 98281;
 
-//[x_mario_ana,y_mario_ana]=PAM_mario(palavra_pcm_ana,tam)
-//plot2d2(x_mario_ana,y_mario_ana)
+[x_mario_ana,y_mario_ana]=PAM_mario(palavra_pcm_ana,tam)
+plot2d2(x_mario_ana,y_mario_ana)
 
-[x_mario_italo,y_mario_italo]=PAM_mario(palavra_pcm_italo,tam)
-plot2d2(x_mario_italo,y_mario_italo)
+//[x_mario_italo,y_mario_italo]=PAM_mario(palavra_pcm_italo,tam)
+//plot2d2(x_mario_italo,y_mario_italo)
 
 //[x_mario_lara,y_mario_lara]=PAM_mario(palavra_pcm_lara,tam)
 //plot2d2(x_mario_lara,y_mario_lara)

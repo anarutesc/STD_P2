@@ -1,6 +1,5 @@
 
 //modulacao delta
-clear
 
 load('C:\Users\ana_r\Documents\UFRN\2018.2\STD\P2\Sinais_P2\AnaRute.sod')
 x_ana=x_a;
@@ -17,6 +16,7 @@ x_luiza(length(x_luiza)+1)=0
 
 exec('C:\Users\ana_r\Documents\UFRN\2018.2\STD\P2\Sinais_P2\delta_mod.sce')
 exec('C:\Users\ana_r\Documents\UFRN\2018.2\STD\P2\Sinais_P2\reamostragem.sce')
+//exec('C:\Users\ana_r\Documents\UFRN\2018.2\STD\P2\Sinais_P2\plot_legivel.sce')
 
 x_ana_reamostrado=reamostragem(x_ana,3)
 x_italo_reamostrado=reamostragem(x_italo,3)
@@ -80,12 +80,10 @@ for k=1:floor(tempo_final/passo)
 
 end*/
 
-figure
-plot2d2(t,x_ana_reamostrado,2)
-figure
-plot2d2(t,x_q_ana,5)
+plot_legivel(t, x_ana_reamostrado,'Sinal Reamostrado','Tempo','Amplitude',[0 98282/264600  floor(min(x_ana_reamostrado)) ceil(max(x_ana_reamostrado))],3,1)
+plot_legivel(t, x_q_ana,'Sinal Quantizado','Tempo','Amplitude',[0 98282/264600 floor(min(x_q_ana)) ceil(max(x_q_ana))],3,2)
 
-figure
+/*figure
 plot2d2(t,x_italo_reamostrado,2)
 figure
 plot2d2(t,x_q_italo,5)
@@ -99,4 +97,4 @@ figure
 plot2d2(t,x_luiza_reamostrado,2)
 figure
 plot2d2(t,x_q_luiza,5)
-
+*/
